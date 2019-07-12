@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+
+<html prefix="og: http://ogp.me/ns#">
+  <head>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Route AI </title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+
+
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <!-- Place favicon.ico in the root directory -->
+
+
+
+
+    <script type="text/javascript" src="scripts/logic.js"></script>
+<script type="text/javascript" src="scripts/tipped.js"></script>
+    <link href="css/normalize.css" rel="stylesheet" type="text/css"/>
+<link rel="stylesheet" type="text/css" href="css/tipped.css"/>
+
+  <div id="preloader">
+  <div id="status">&nbsp;</div>
+</div>
+
+  </head>
+
+  <body style="background-color:black;">
+
+
+<script type="text/javascript">
+  $(document).ready(function() {
+    Tipped.create('.project-tooltip', "Created with HTML, CSS, and JavaScript + JQuery");
+    Tipped.create('.algorithm-tooltip', "Breadth First, Depth First, Best First, and A*");
+});
+</script>
+
+
+    <div class="container">
+
+       <div id="alert_placeholder"></div>
+
+          <form class="form">
+      <div class="row">
+  <div class="col-lg-6 col-xs-6">
+       <div class="input-group" id="rows-div">
+  <span class="input-group-addon">Rows</span>
+      <input type="number" min="0" class="form-control form-control-warning" id="rows-field" value="10" placeholder="#" required>
+    </div>
+  </div>
+  <div class="col-lg-6 col-xs-6">
+       <div class="input-group" id="cols-div">
+          <span class="input-group-addon">Cols</span>
+      <input type="number" min="0" class="form-control form-control-warning" id="cols-field" value="10" placeholder="#" required>
+
+    </div>
+
+  </div>
+
+
+
+</div>
+            </form>
+          <br>
+       <div class="input-group-sm" id="concentration-div">
+      <span class="input-group-addon">Ratio of blacks %</span>
+      <input type="number" min="0" max="100" class="form-control" id="concentration-field" value="25" placeholder="% of Black Tiles" required>
+      </div>
+
+    </div>
+
+
+    <br>
+    <div class="container">
+
+<div class="text-center">
+ <div class="btn-group btn-group-sm" id="btnPanel" role="group" aria-label="btnPanel">
+  <button type="button" id="traverseBtn" class="btn btn-danger disabled" onclick="traverse();" target="_blank">Simulate route</button>
+  <button type="button" id="generateArrayBtn" class="btn btn-info" onclick="generateArray();" target="_blank">Generate</button>
+  <button type="button" id="viewArrayBtn" class="btn btn-default disabled" data-toggle="modal" data-target="#myModal">Data</button>
+ </div>
+</div>
+
+      <!-- Modal -->
+      <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+
+          <!-- Modal content-->
+          <div class="modal-content">
+            <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+              <h4 class="modal-title">2D Array Data</h4>
+            </div>
+            <div class="modal-body">
+              <p id="arrayModalText">Generate a 2D Array Grid first in order to see (debug) values here.</p>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+
+        <div class="text-center">
+      <strong id="log"></strong>
+    </div>
+
+    <br>
+    <br>
+    <table id="table"></table>
+
+  </body>
+
+</html>
